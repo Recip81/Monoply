@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f0e6d8;
+  --surface: #fffdf8;
+  --table: #5c3d2e;
+  --table-hi: #7a5542;
+  --table-lo: #3d2518;
+  --board: #f5ede0;
+  --board-rim: #8b7355;
+  --board-deep: #6b5940;
+  --c-brown: #8b4513;
+  --c-sky: #87ceeb;
+  --c-pink: #ff69b4;
+  --c-orange: #ff8c42;
+  --c-red: #e74c3c;
+  --c-yellow: #f1c40f;
+  --c-green: #2ecc71;
+  --c-navy: #2c3e80;
+  --c-purple: #8e44ad;
+  --c-gold: #daa520;
+  --accent: #ff8c42;
+  --accent-d: #e07030;
+  --mint: #3ecfcf;
+  --coin: #ffd93d;
+  --coin-d: #e6b800;
+  --txt: #2d2b55;
+  --txt2: #5a5780;
+  --txt3: #9490b0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: "Noto Sans SC", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+.font-title {
+  font-family: "ZCOOL KuaiLe", sans-serif;
+}
+.font-num {
+  font-family: "Fredoka", sans-serif;
+}
+
+/* 第三幕事件动画：抽卡翻牌、入狱抖动 */
+@keyframes flip {
+  0% {
+    transform: rotateY(90deg) scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-6px); }
+  40% { transform: translateX(6px); }
+  60% { transform: translateX(-4px); }
+  80% { transform: translateX(4px); }
+}
+/* 锦鲤大奖金币雨：从顶部洒落淡出 */
+@keyframes coinfall {
+  0% { transform: translateY(-40px) rotate(0deg); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(220px) rotate(320deg); opacity: 0; }
+}
